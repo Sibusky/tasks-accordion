@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import Row from '../Row/Row';
-// import DoneTacks from '../DoneTasks/DoneTacks';
-// import TodaysTasks from '../TodaysTasks/TodaysTasks';
-// import FutureTasks from '../FutureTasks/FutureTasks';
 import TaskSubtitle from '../TasksSubtitle/TaskSubtitle';
 import { tasks } from '../../utils/tasks';
 
@@ -14,6 +11,7 @@ export default function TaskTable() {
   const [doneTasks, setDoneTasks] = useState([]);
   const [todaysTasks, setTodaysTasks] = useState([]);
   const [futureTasks, setFutureTasks] = useState([]);
+  const [selectedRow, setSelectedRow] = useState('');
 
   useEffect(() => {
     const doneTasks = tasks.filter((task) => task.type === 'done');
@@ -24,6 +22,10 @@ export default function TaskTable() {
     setFutureTasks(futureTasks);
   }, []);
 
+  function handleRowClick(id) {
+    setSelectedRow(id);
+  }
+
   return (
     <section className='section'>
       <div className='section__container'>
@@ -31,6 +33,7 @@ export default function TaskTable() {
         <div className='table-header'>
           <Row
             type='table-header'
+            handleClick={handleRowClick}
             date='Дата'
             taskCode='Шифр задачи'
             projectCode='Шифр проекта'
@@ -48,11 +51,17 @@ export default function TaskTable() {
         </div>
 
         <div className='done-tasks'>
-          <TaskSubtitle tasksId={'done'} setActiveTasks={setActiveTasks} />
+          <TaskSubtitle
+            tasksId={'done'}
+            setActiveTasks={setActiveTasks}
+            subtitle='Выполненные задачи'
+          />
           <div className={`rows ${activeTasks === 'done' ? '' : 'height-0'}`}>
             {doneTasks.map((task) => (
               <Row
                 type='table-row'
+                selectedRow={selectedRow}
+                handleClick={handleRowClick}
                 key={task.id}
                 id={task.id}
                 date={task.date}
@@ -74,11 +83,17 @@ export default function TaskTable() {
         </div>
 
         <div className='todays-tasks'>
-          <TaskSubtitle tasksId={'today'} setActiveTasks={setActiveTasks} />
+          <TaskSubtitle
+            tasksId={'today'}
+            setActiveTasks={setActiveTasks}
+            subtitle='Задачи на сегодня'
+          />
           <div className={`rows ${activeTasks === 'today' ? '' : 'height-0'}`}>
             {todaysTasks.map((task) => (
               <Row
                 type='table-row'
+                selectedRow={selectedRow}
+                handleClick={handleRowClick}
                 key={task.id}
                 id={task.id}
                 date={task.date}
@@ -100,11 +115,17 @@ export default function TaskTable() {
         </div>
 
         <div className='future-tasks'>
-          <TaskSubtitle tasksId={'future'} setActiveTasks={setActiveTasks} />
+          <TaskSubtitle
+            tasksId={'future'}
+            setActiveTasks={setActiveTasks}
+            subtitle='Предстоящие задачи'
+          />
           <div className={`rows ${activeTasks === 'future' ? '' : 'height-0'}`}>
             {futureTasks.map((task) => (
               <Row
                 type='table-row'
+                selectedRow={selectedRow}
+                handleClick={handleRowClick}
                 key={task.id}
                 id={task.id}
                 date={task.date}

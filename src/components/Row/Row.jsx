@@ -4,6 +4,8 @@ import './Row.css';
 
 export default function Row({
   type,
+  selectedRow,
+  handleClick,
   id,
   date,
   taskCode,
@@ -26,7 +28,12 @@ export default function Row({
   }
 
   return (
-    <div className='row-template'>
+    <div
+      className={`row-template ${
+        selectedRow === id && type === 'table-row' ? 'row-selected' : ''
+      }`}
+      onClick={() => handleClick(id)}
+    >
       <div className='date'>{date}</div>
       <div className='task-code'>{taskCode}</div>
       <div className='project-code'>{projectCode}</div>

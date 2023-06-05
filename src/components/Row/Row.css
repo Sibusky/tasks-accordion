@@ -1,3 +1,10 @@
 .row-template {
     display: flex;
   }
+
+  
+
+
+  .row-selected {
+    border: 1px solid red
+  }
