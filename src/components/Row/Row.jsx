@@ -2,22 +2,36 @@ import React from 'react';
 
 import './Row.css';
 
-export default function Row() {
+export default function Row({
+  date,
+  taskCode,
+  projectCode,
+  task,
+  status,
+  responsible,
+  shift,
+  priority,
+  comment,
+  timePlanned,
+  timeFact,
+  start,
+  finish,
+}) {
   return (
     <div className='row-template'>
-      <div className='date'>Дата</div>
-      <div className='task-code'>Шифр задачи</div>
-      <div className='project-code'>Шифр проекта</div>
-      <div className='task'>Задача</div>
-      <div className='status'>Статус</div>
-      <div className='responsible'>Ответственный</div>
-      <div className='shift'>Переназначить</div>
-      <div className='priority'>Приоритет</div>
-      <div className='comment'>Комментарий</div>
-      <div className='time-planned'>План время</div>
-      <div className='time-fact'>Факт время</div>
-      <div className='start'>Начал</div>
-      <div className='finish'>Завершил</div>
+      <div className='date'>{date}</div>
+      <div className='task-code'>{taskCode}</div>
+      <div className='project-code'>{projectCode}</div>
+      <div className='task'>{task}</div>
+      <div className='status'>{status}</div>
+      <div className='responsible'>{responsible}</div>
+      <div className='shift'>{shift}</div>
+      <div className='priority'>{priority}</div>
+      <div className='comment'>{comment}</div>
+      <div className='time-planned'>{timePlanned}</div>
+      <div className='time-fact'>{timeFact}</div>
+      <div className='start'>{start}</div>
+      <div className='finish'>{finish}</div>
     </div>
   );
 }
