@@ -15,9 +15,9 @@ export default function TaskTable({
   handleClick,
 }) {
   return (
-    <section className='section'>
-      <div className='section__container'>
-        <h3 className='section__title'>Задачи</h3>
+    <section className='table'>
+      <div className='table__section'>
+        <h3 className='table__title h3'>Задачи</h3>
         <div className='table-header'>
           <Row
             type='table-header'

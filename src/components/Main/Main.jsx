@@ -20,24 +20,26 @@ export default function Main({
 }) {
   return (
     <main className='main'>
-      <Toolbar
-        selectedRow={selectedRow}
-        handleDuplicate={handleDuplicate}
-        handleDelete={handleDelete}
-      />
-      {isLoading ? (
-        <Spinner />
-      ) : (
-        <TaskTable
-          doneTasks={doneTasks}
-          todaysTasks={todaysTasks}
-          futureTasks={futureTasks}
+      <div className='main__container'>
+        <Toolbar
           selectedRow={selectedRow}
-          activeTasks={activeTasks}
-          setActiveTasks={setActiveTasks}
-          handleClick={handleClick}
+          handleDuplicate={handleDuplicate}
+          handleDelete={handleDelete}
         />
-      )}
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <TaskTable
+            doneTasks={doneTasks}
+            todaysTasks={todaysTasks}
+            futureTasks={futureTasks}
+            selectedRow={selectedRow}
+            activeTasks={activeTasks}
+            setActiveTasks={setActiveTasks}
+            handleClick={handleClick}
+          />
+        )}
+      </div>
     </main>
   );
 }
