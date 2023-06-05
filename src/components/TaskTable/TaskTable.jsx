@@ -45,7 +45,7 @@ export default function TaskTable({
             setActiveTasks={setActiveTasks}
             subtitle='Выполненные задачи'
           />
-          <div className={`rows ${activeTasks === 'done' ? '' : 'height-0'}`}>
+          <div className={`rows ${activeTasks === 'done' ? '' : 'rows rows-hidden'}`}>
             {doneTasks.map((task) => (
               <Row
                 type='table-row'
@@ -78,7 +78,7 @@ export default function TaskTable({
             setActiveTasks={setActiveTasks}
             subtitle='Задачи на сегодня'
           />
-          <div className={`rows ${activeTasks === 'today' ? '' : 'height-0'}`}>
+          <div className={`rows ${activeTasks === 'today' ? '' : 'rows rows-hidden'}`}>
             {todaysTasks.map((task) => (
               <Row
                 type='table-row'
@@ -111,7 +111,7 @@ export default function TaskTable({
             setActiveTasks={setActiveTasks}
             subtitle='Предстоящие задачи'
           />
-          <div className={`rows ${activeTasks === 'future' ? '' : 'height-0'}`}>
+          <div className={`rows ${activeTasks === 'future' ? '' : 'rows rows-hidden'}`}>
             {futureTasks.map((task) => (
               <Row
                 type='table-row'
