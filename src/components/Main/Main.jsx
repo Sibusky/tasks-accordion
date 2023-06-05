@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-import './Main.css'
+import './Main.css';
+
+import Toolbar from '../Toolbar/Toolbar';
+import TaskTable from '../TaskTable/TaskTable';
 
 export default function Main() {
   return (
-    <div>Main</div>
-  )
+    <main className='main'>
+      <Toolbar />
+      <TaskTable />
+    </main>
+  );
 }
