@@ -11,9 +11,14 @@ function App() {
   const [activeTasks, setActiveTasks] = useState('today');
   const [tasksList, setTasksList] = useState([]);
   const [selectedRow, setSelectedRow] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setTasksList(tasks);
+    setIsLoading(true)
+    setTimeout(() => {
+      setTasksList(tasks);
+      setIsLoading(false)
+    }, 2000);
   }, []);
 
   const doneTasks = tasksList.filter((task) => task.type === 'done');
@@ -75,6 +80,7 @@ function App() {
         handleClick={handleRowClick}
         handleDuplicate={handleDuplicate}
         handleDelete={handleDelete}
+        isLoading={isLoading}
       />
       <Footer />
     </div>

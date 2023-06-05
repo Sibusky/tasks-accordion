@@ -4,6 +4,7 @@ import './Main.css';
 
 import Toolbar from '../Toolbar/Toolbar';
 import TaskTable from '../TaskTable/TaskTable';
+import Spinner from '../UI/Spinner/Spinner';
 
 export default function Main({
   doneTasks,
@@ -15,6 +16,7 @@ export default function Main({
   handleClick,
   handleDuplicate,
   handleDelete,
+  isLoading,
 }) {
   return (
     <main className='main'>
@@ -23,15 +25,19 @@ export default function Main({
         handleDuplicate={handleDuplicate}
         handleDelete={handleDelete}
       />
-      <TaskTable
-        doneTasks={doneTasks}
-        todaysTasks={todaysTasks}
-        futureTasks={futureTasks}
-        selectedRow={selectedRow}
-        activeTasks={activeTasks}
-        setActiveTasks={setActiveTasks}
-        handleClick={handleClick}
-      />
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <TaskTable
+          doneTasks={doneTasks}
+          todaysTasks={todaysTasks}
+          futureTasks={futureTasks}
+          selectedRow={selectedRow}
+          activeTasks={activeTasks}
+          setActiveTasks={setActiveTasks}
+          handleClick={handleClick}
+        />
+      )}
     </main>
   );
 }
