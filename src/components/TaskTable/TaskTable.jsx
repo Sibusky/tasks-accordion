@@ -2,7 +2,9 @@ import React from 'react';
 
 import './TaskTable.css';
 import Row from '../Row/Row';
-import TaskSubtitle from '../TasksSubtitle/TaskSubtitle';
+import DoneTacks from '../DoneTasks/DoneTacks';
+import TodaysTasks from '../TodaysTasks/TodaysTasks';
+import FutureTasks from '../FutureTasks/FutureTasks';
 
 export default function TaskTable() {
   return (
@@ -12,24 +14,9 @@ export default function TaskTable() {
         <div className='table-header'>
           <Row />
         </div>
-        <div className='done-tasks'>
-          <TaskSubtitle />
-          <Row />
-          <Row />
-          <Row />
-        </div>
-        <div className='todays-tasks'>
-          <TaskSubtitle />
-          <Row />
-          <Row />
-          <Row />
-        </div>
-        <div className='future-tasks'>
-          <TaskSubtitle />
-          <Row />
-          <Row />
-          <Row />
-        </div>
+        <DoneTacks />
+        <TodaysTasks />
+        <FutureTasks />
       </div>
     </section>
   );
