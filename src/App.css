@@ -4,6 +4,7 @@
 }
 
 .App {
+  /* position: relative; */
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -13,6 +14,7 @@
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
+  height: 100vh;
 }
 
 .text {
