@@ -1,31 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import Row from '../Row/Row';
 import TaskSubtitle from '../TasksSubtitle/TaskSubtitle';
-import { tasks } from '../../utils/tasks';
 
 import './TaskTable.css';
 
-export default function TaskTable() {
-  const [activeTasks, setActiveTasks] = useState('today');
-  const [doneTasks, setDoneTasks] = useState([]);
-  const [todaysTasks, setTodaysTasks] = useState([]);
-  const [futureTasks, setFutureTasks] = useState([]);
-  const [selectedRow, setSelectedRow] = useState('');
-
-  useEffect(() => {
-    const doneTasks = tasks.filter((task) => task.type === 'done');
-    const todaysTasks = tasks.filter((task) => task.type === 'today');
-    const futureTasks = tasks.filter((task) => task.type === 'future');
-    setDoneTasks(doneTasks);
-    setTodaysTasks(todaysTasks);
-    setFutureTasks(futureTasks);
-  }, []);
-
-  function handleRowClick(id) {
-    setSelectedRow(id);
-  }
-
+export default function TaskTable({
+  doneTasks,
+  todaysTasks,
+  futureTasks,
+  selectedRow,
+  activeTasks,
+  setActiveTasks,
+  handleClick,
+}) {
   return (
     <section className='section'>
       <div className='section__container'>
@@ -33,7 +21,7 @@ export default function TaskTable() {
         <div className='table-header'>
           <Row
             type='table-header'
-            handleClick={handleRowClick}
+            handleClick={handleClick}
             date='Дата'
             taskCode='Шифр задачи'
             projectCode='Шифр проекта'
@@ -61,7 +49,7 @@ export default function TaskTable() {
               <Row
                 type='table-row'
                 selectedRow={selectedRow}
-                handleClick={handleRowClick}
+                handleClick={handleClick}
                 key={task.id}
                 id={task.id}
                 date={task.date}
@@ -93,7 +81,7 @@ export default function TaskTable() {
               <Row
                 type='table-row'
                 selectedRow={selectedRow}
-                handleClick={handleRowClick}
+                handleClick={handleClick}
                 key={task.id}
                 id={task.id}
                 date={task.date}
@@ -125,7 +113,7 @@ export default function TaskTable() {
               <Row
                 type='table-row'
                 selectedRow={selectedRow}
-                handleClick={handleRowClick}
+                handleClick={handleClick}
                 key={task.id}
                 id={task.id}
                 date={task.date}

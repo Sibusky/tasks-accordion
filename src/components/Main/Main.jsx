@@ -5,11 +5,27 @@ import './Main.css';
 import Toolbar from '../Toolbar/Toolbar';
 import TaskTable from '../TaskTable/TaskTable';
 
-export default function Main() {
+export default function Main({
+  doneTasks,
+  todaysTasks,
+  futureTasks,
+  selectedRow,
+  activeTasks,
+  setActiveTasks,
+  handleClick,
+}) {
   return (
     <main className='main'>
       <Toolbar />
-      <TaskTable />
+      <TaskTable
+        doneTasks={doneTasks}
+        todaysTasks={todaysTasks}
+        futureTasks={futureTasks}
+        selectedRow={selectedRow}
+        activeTasks={activeTasks}
+        setActiveTasks={setActiveTasks}
+        handleClick={handleClick}
+      />
     </main>
   );
 }
