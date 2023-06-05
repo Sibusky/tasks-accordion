@@ -14,10 +14,15 @@ export default function Main({
   setActiveTasks,
   handleClick,
   handleDuplicate,
+  handleDelete,
 }) {
   return (
     <main className='main'>
-      <Toolbar selectedRow={selectedRow} handleDuplicate={handleDuplicate}/>
+      <Toolbar
+        selectedRow={selectedRow}
+        handleDuplicate={handleDuplicate}
+        handleDelete={handleDelete}
+      />
       <TaskTable
         doneTasks={doneTasks}
         todaysTasks={todaysTasks}

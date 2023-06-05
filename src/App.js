@@ -12,11 +12,9 @@ function App() {
   const [tasksList, setTasksList] = useState([]);
   const [selectedRow, setSelectedRow] = useState('');
 
-
   useEffect(() => {
-    setTasksList(tasks)
-  }, [])
-
+    setTasksList(tasks);
+  }, []);
 
   const doneTasks = tasksList.filter((task) => task.type === 'done');
   const todaysTasks = tasksList.filter((task) => task.type === 'today');
@@ -53,8 +51,13 @@ function App() {
         duplicatedRow,
         ...tasksList.slice(tasksList.indexOf(selectedRow)),
       ]);
+    },
+    [tasksList]
+  );
 
-      console.log(selectedRow)
+  const handleDelete = useCallback(
+    (id) => {
+      setTasksList(tasksList.filter((task) => task.id !== id));
     },
     [tasksList]
   );
@@ -71,6 +74,7 @@ function App() {
         setActiveTasks={setActiveTasks}
         handleClick={handleRowClick}
         handleDuplicate={handleDuplicate}
+        handleDelete={handleDelete}
       />
       <Footer />
     </div>
