@@ -31,19 +31,29 @@ export default function Row({
     <div
       className={`row-template ${
         selectedRow === id && type === 'table-row' ? 'row-selected' : ''
-      }`}
+      } ${type === 'table-row' ? 'button' : ''}`}
       onClick={() => handleClick(id)}
     >
-      <div className='date'>{date}</div>
-      <div className='task-code'>{taskCode}</div>
-      <div className='project-code'>{projectCode}</div>
-      <div className='task'>{task}</div>
+      <div className='cell date'>
+        <p className='text'>{date}</p>
+      </div>
+      <div className='cell task-code'>
+        <p className='text'>{taskCode}</p>
+      </div>
+      <div className='cell project-code'>
+        <p className='text'>{projectCode}</p>
+      </div>
+      <div className='cell task'>
+        <p className='text'>{task}</p>
+      </div>
       {type === 'table-header' ? (
-        <div className='status'>{status}</div>
+        <div className='cell status'>
+          <p className='text'>{status}</p>
+        </div>
       ) : (
-        <div className='status'>
+        <div className='cell status'>
           <select
-            className='select'
+            className='select text'
             value={select}
             onChange={(e) => handleChangStatus(e)}
           >
@@ -55,14 +65,30 @@ export default function Row({
           </select>
         </div>
       )}
-      <div className='responsible'>{responsible}</div>
-      <div className='shift'>{shift}</div>
-      <div className='priority'>{priority}</div>
-      <div className='comment'>{comment}</div>
-      <div className='time-planned'>{timePlanned}</div>
-      <div className='time-fact'>{timeFact}</div>
-      <div className='start'>{start}</div>
-      <div className='finish'>{finish}</div>
+      <div className='cell responsible'>
+        <p className='text'>{responsible}</p>
+      </div>
+      <div className='cell shift'>
+        <p className='text'>{shift}</p>
+      </div>
+      <div className='cell priority'>
+        <p className='text'>{priority}</p>
+      </div>
+      <div className='cell comment'>
+        <p className='text'>{comment}</p>
+      </div>
+      <div className='cell time-planned'>
+        <p className='text'>{timePlanned}</p>
+      </div>
+      <div className='cell time-fact'>
+        <p className='text'>{timeFact}</p>
+      </div>
+      <div className='cell start'>
+        <p className='text'>{start}</p>
+      </div>
+      <div className='cell finish'>
+        <p className='text'>{finish}</p>
+      </div>
     </div>
   );
 }

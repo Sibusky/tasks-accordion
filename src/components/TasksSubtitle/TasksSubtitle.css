@@ -1,0 +1,28 @@
+.tasks-subtitle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 48px;
+  background-color: #E1E1FB;
+}
+
+.tasks-subtitle__text {
+  width: 212px;
+  margin: 0 8px 0 0;
+}
+
+.tasks-subtitle__arrow {
+  background-image: url('../../images/arrow-down.png');
+  width: 10px;
+  height: 6px;
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  transform: rotate(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.tasks-subtitle__arrow-rotated {
+  transform: rotate(-180deg);
+}

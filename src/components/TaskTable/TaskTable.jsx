@@ -16,8 +16,8 @@ export default function TaskTable({
 }) {
   return (
     <section className='table'>
-      <div className='table__section'>
-        <h3 className='table__title h3'>Задачи</h3>
+      <div className='table__container'>
+        <h3 className='table__title text h3'>Задачи</h3>
         <div className='table-header'>
           <Row
             type='table-header'
@@ -38,9 +38,10 @@ export default function TaskTable({
           />
         </div>
 
-        <div className='done-tasks'>
+        <div className='done-tasks tasks'>
           <TaskSubtitle
             tasksId={'done'}
+            activeTasks={activeTasks}
             setActiveTasks={setActiveTasks}
             subtitle='Выполненные задачи'
           />
@@ -70,9 +71,10 @@ export default function TaskTable({
           </div>
         </div>
 
-        <div className='todays-tasks'>
+        <div className='todays-tasks tasks'>
           <TaskSubtitle
             tasksId={'today'}
+            activeTasks={activeTasks}
             setActiveTasks={setActiveTasks}
             subtitle='Задачи на сегодня'
           />
@@ -102,9 +104,10 @@ export default function TaskTable({
           </div>
         </div>
 
-        <div className='future-tasks'>
+        <div className='future-tasks tasks'>
           <TaskSubtitle
             tasksId={'future'}
+            activeTasks={activeTasks}
             setActiveTasks={setActiveTasks}
             subtitle='Предстоящие задачи'
           />

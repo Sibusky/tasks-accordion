@@ -1,12 +1,28 @@
 .table {
-
-    border-left: 1px solid rgb(231, 231, 231);
+  width: calc(100% - 70px);
+  border-left: 1px solid rgb(231, 231, 231);
 }
 
 .table__container {
-
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0;
+  padding: 41px 36px;
+  box-sizing: border-box;
 }
 
+.table-header {
+  width: 100%;
+  background-color: #f7f7fc;
+}
 
+.tasks {
+    width: 100%;
+}
 
-
+.rows {
+    width: 100%;
+    
+}

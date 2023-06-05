@@ -1,10 +1,67 @@
 .row-template {
-    display: flex;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 68px;
+}
 
-  
+.row-selected {
+  background-color: #71FACA;
+}
 
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .row-selected {
-    border: 1px solid red
-  }
+.date {
+  width: 8%;
+}
+
+.task-code {
+  width: 5%;
+}
+
+.project-code {
+  width: 5%;
+}
+
+.task {
+  width: 15%;
+}
+
+.status {
+  width: 10%;
+}
+
+.responsible {
+  width: 10%;
+}
+
+.shift {
+  width: 10%;
+}
+
+.priority {
+  width: 7%;
+}
+
+.comment {
+  width: 10%;
+}
+.time-planned {
+  width: 7%;
+}
+
+.time-fact {
+  width: 7%;
+}
+
+.start {
+  width: 8%;
+}
+
+.finish {
+  width: 8%;
+}
