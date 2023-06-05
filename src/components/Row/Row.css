@@ -1,0 +1,71 @@
+.row-template {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 68px;
+  max-height: fit-content;
+}
+
+.row-selected {
+  background-color: #71FACA;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 5px;
+  width: fit-content;
+  box-sizing: border-box;
+}
+
+.date {
+  width: 7%;
+}
+
+.task-code {
+  width: 4%;
+}
+
+.project-code {
+  width: 4%;
+}
+
+.task {
+  width: 16%;
+}
+
+.status {
+  width: 10%;
+}
+
+.responsible {
+  width: 10%;
+}
+
+.shift {
+  width: 10%;
+}
+
+.priority {
+  width: 6%;
+}
+
+.comment {
+  width: 10%;
+}
+.time-planned {
+  width: 7%;
+}
+
+.time-fact {
+  width: 7%;
+}
+
+.start {
+  width: 8%;
+}
+
+.finish {
+  width: 8%;
+}

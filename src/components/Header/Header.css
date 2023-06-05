@@ -1,0 +1,144 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 20px 0 20px 0;
+  width: 1540px;
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+
+@media screen and (max-width: 1600px) {
+  .header__container {
+    width: 90%;
+  }
+}
+
+.header__project {
+  display: flex;
+  width: fit-content;
+}
+
+.header__project-image {
+  background-image: url('../../images/rocket.png');
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+  margin: 0 10px 0 0;
+}
+
+@media screen and (max-width: 720px) {
+  .header__project-image {
+    width: 30px;
+    height: 30px;
+    margin: 0 8px 0 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header__project-image {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px 0 0;
+  }
+}˝
+
+.header__project-title {
+  margin: 0 10px 0 0;
+}
+
+.header__project-user {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: fit-content;
+}
+
+.header__project-user-ring {
+  background-image: url('../../images/ring.png');
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+  margin: 0 33px 0 0;
+}
+
+@media screen and (max-width: 720px) {
+  .header__project-user-ring {
+    width: 15px;
+    height: 15px;
+    margin: 0 20px 0 0;
+  }
+}
+
+.header__project-user-avatar {
+  background-image: url('../../images/astronaut.png');
+  min-width: 42px;
+  height: 42px;
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+  margin: 0 18px 0 0;
+  border-radius: 50%;
+  box-shadow: 0 0 10px gray;
+}
+
+@media screen and (max-width: 500px) {
+  .header__project-user-avatar {
+    min-width: 40px;
+    height: 40px;
+    margin: 0 8px 0 0;
+  }
+}
+
+.header__project-user-bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.header__project-user-name {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19.2px;
+  padding: 0;
+  margin: 0 0 4px 0;
+}
+
+@media screen and (max-width: 720px) {
+  .header__project-user-name {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.header__project-user-role {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.4px;
+  color: #9a9ab0;
+}
+
+@media screen and (max-width: 720px) {
+  .header__project-user-role {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+  }
+}

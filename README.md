@@ -1,1 +1,2 @@
-# tasks-accordion
+# Accordion styled task manager
+
