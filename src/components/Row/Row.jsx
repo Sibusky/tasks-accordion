@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Row.css';
 
 export default function Row({
+  type,
+  id,
   date,
   taskCode,
   projectCode,
@@ -17,13 +19,35 @@ export default function Row({
   start,
   finish,
 }) {
+  const [select, setSelect] = useState('В работе');
+
+  function handleChangStatus(e) {
+    setSelect(e.target.value);
+  }
+
   return (
     <div className='row-template'>
       <div className='date'>{date}</div>
       <div className='task-code'>{taskCode}</div>
       <div className='project-code'>{projectCode}</div>
       <div className='task'>{task}</div>
-      <div className='status'>{status}</div>
+      {type === 'table-header' ? (
+        <div className='status'>{status}</div>
+      ) : (
+        <div className='status'>
+          <select
+            className='select'
+            value={select}
+            onChange={(e) => handleChangStatus(e)}
+          >
+            {status.map((status) => (
+              <option key={status} value={status}>
+                {status}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
       <div className='responsible'>{responsible}</div>
       <div className='shift'>{shift}</div>
       <div className='priority'>{priority}</div>

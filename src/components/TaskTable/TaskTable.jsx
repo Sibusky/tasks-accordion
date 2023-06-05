@@ -29,7 +29,22 @@ export default function TaskTable() {
       <div className='section__container'>
         <h3 className='section__title'>Задачи</h3>
         <div className='table-header'>
-          <Row />
+          <Row
+            type='table-header'
+            date='Дата'
+            taskCode='Шифр задачи'
+            projectCode='Шифр проекта'
+            task='Задача'
+            status='Статус'
+            responsible='Ответственный'
+            shift='Переназначить'
+            priority='Приоритет'
+            comment='Комментарий'
+            timePlanned='План время'
+            timeFact='Факт время'
+            start='Начало'
+            finish='Завершение'
+          />
         </div>
 
         <div className='done-tasks'>
@@ -37,12 +52,14 @@ export default function TaskTable() {
           <div className={`rows ${activeTasks === 'done' ? '' : 'height-0'}`}>
             {doneTasks.map((task) => (
               <Row
+                type='table-row'
                 key={task.id}
+                id={task.id}
                 date={task.date}
                 taskCode={task.taskCode}
                 projectCode={task.projectCode}
                 task={task.task}
-                status={task.status[0]}
+                status={task.status}
                 responsible={task.responsible}
                 shift={task.shift}
                 priority={task.priority}
@@ -61,12 +78,14 @@ export default function TaskTable() {
           <div className={`rows ${activeTasks === 'today' ? '' : 'height-0'}`}>
             {todaysTasks.map((task) => (
               <Row
+                type='table-row'
                 key={task.id}
+                id={task.id}
                 date={task.date}
                 taskCode={task.taskCode}
                 projectCode={task.projectCode}
                 task={task.task}
-                status={task.status[0]}
+                status={task.status}
                 responsible={task.responsible}
                 shift={task.shift}
                 priority={task.priority}
@@ -85,12 +104,14 @@ export default function TaskTable() {
           <div className={`rows ${activeTasks === 'future' ? '' : 'height-0'}`}>
             {futureTasks.map((task) => (
               <Row
+                type='table-row'
                 key={task.id}
+                id={task.id}
                 date={task.date}
                 taskCode={task.taskCode}
                 projectCode={task.projectCode}
                 task={task.task}
-                status={task.status[0]}
+                status={task.status}
                 responsible={task.responsible}
                 shift={task.shift}
                 priority={task.priority}
@@ -103,7 +124,6 @@ export default function TaskTable() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
