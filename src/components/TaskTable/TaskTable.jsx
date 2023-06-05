@@ -23,18 +23,18 @@ export default function TaskTable({
             type='table-header'
             handleClick={handleClick}
             date='Дата'
-            taskCode='Шифр задачи'
-            projectCode='Шифр проекта'
+            taskCode='Шифр зада&shy;чи'
+            projectCode='Шифр проек&shy;та'
             task='Задача'
-            status='Статус'
-            responsible='Ответственный'
-            shift='Переназначить'
-            priority='Приоритет'
-            comment='Комментарий'
+            status='Ста&shy;тус'
+            responsible='Ответ&shy;ственный'
+            shift='Пере&shy;назначить'
+            priority='Прио&shy;ритет'
+            comment='Коммен&shy;та&shy;рий'
             timePlanned='План время'
             timeFact='Факт время'
             start='Начало'
-            finish='Завершение'
+            finish='Завер&shy;шение'
           />
         </div>
 

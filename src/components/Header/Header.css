@@ -41,12 +41,31 @@
   margin: 0 10px 0 0;
 }
 
+@media screen and (max-width: 720px) {
+  .header__project-image {
+    width: 30px;
+    height: 30px;
+    margin: 0 8px 0 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header__project-image {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px 0 0;
+  }
+}˝
+
+.header__project-title {
+  margin: 0 10px 0 0;
+}
+
 .header__project-user {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: fit-content;
-
 }
 
 .header__project-user-ring {
@@ -59,9 +78,17 @@
   margin: 0 33px 0 0;
 }
 
+@media screen and (max-width: 720px) {
+  .header__project-user-ring {
+    width: 15px;
+    height: 15px;
+    margin: 0 20px 0 0;
+  }
+}
+
 .header__project-user-avatar {
   background-image: url('../../images/astronaut.png');
-  width: 42px;
+  min-width: 42px;
   height: 42px;
   background-position: center;
   background-size: cover;
@@ -69,6 +96,14 @@
   margin: 0 18px 0 0;
   border-radius: 50%;
   box-shadow: 0 0 10px gray;
+}
+
+@media screen and (max-width: 500px) {
+  .header__project-user-avatar {
+    min-width: 40px;
+    height: 40px;
+    margin: 0 8px 0 0;
+  }
 }
 
 .header__project-user-bio {
@@ -86,9 +121,24 @@
   margin: 0 0 4px 0;
 }
 
+@media screen and (max-width: 720px) {
+  .header__project-user-name {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
 .header__project-user-role {
   font-weight: 400;
   font-size: 12px;
   line-height: 14.4px;
   color: #9a9ab0;
+}
+
+@media screen and (max-width: 720px) {
+  .header__project-user-role {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+  }
 }

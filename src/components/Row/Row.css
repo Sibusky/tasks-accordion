@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 68px;
+  min-height: 68px;
+  max-height: fit-content;
 }
 
 .row-selected {
@@ -13,22 +14,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 3px 5px;
+  width: fit-content;
+  box-sizing: border-box;
 }
 
 .date {
-  width: 8%;
+  width: 7%;
 }
 
 .task-code {
-  width: 5%;
+  width: 4%;
 }
 
 .project-code {
-  width: 5%;
+  width: 4%;
 }
 
 .task {
-  width: 15%;
+  width: 16%;
 }
 
 .status {
@@ -44,7 +48,7 @@
 }
 
 .priority {
-  width: 7%;
+  width: 6%;
 }
 
 .comment {
