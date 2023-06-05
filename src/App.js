@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import './App.css';
 import Footer from './components/Footer/Footer';
@@ -9,23 +9,55 @@ import { tasks } from './utils/tasks';
 
 function App() {
   const [activeTasks, setActiveTasks] = useState('today');
-  const [doneTasks, setDoneTasks] = useState([]);
-  const [todaysTasks, setTodaysTasks] = useState([]);
-  const [futureTasks, setFutureTasks] = useState([]);
+  const [tasksList, setTasksList] = useState([]);
   const [selectedRow, setSelectedRow] = useState('');
 
+
   useEffect(() => {
-    const doneTasks = tasks.filter((task) => task.type === 'done');
-    const todaysTasks = tasks.filter((task) => task.type === 'today');
-    const futureTasks = tasks.filter((task) => task.type === 'future');
-    setDoneTasks(doneTasks);
-    setTodaysTasks(todaysTasks);
-    setFutureTasks(futureTasks);
-  }, []);
+    setTasksList(tasks)
+  }, [])
+
+
+  const doneTasks = tasksList.filter((task) => task.type === 'done');
+  const todaysTasks = tasksList.filter((task) => task.type === 'today');
+  const futureTasks = tasksList.filter((task) => task.type === 'future');
 
   function handleRowClick(id) {
     setSelectedRow(id);
   }
+
+  const handleDuplicate = useCallback(
+    (id) => {
+      const selectedRow = tasksList.filter((task) => task.id === id)[0];
+
+      const duplicatedRow = {
+        comment: selectedRow.comment,
+        date: selectedRow.date,
+        finish: selectedRow.finish,
+        id: `${selectedRow.id}-${Date.now()}`,
+        priority: selectedRow.priority,
+        projectCode: selectedRow.projectCode,
+        responsible: selectedRow.responsible,
+        shift: selectedRow.shift,
+        start: selectedRow.start,
+        status: selectedRow.status,
+        task: selectedRow.task,
+        taskCode: selectedRow.taskCode,
+        timeFact: selectedRow.timeFact,
+        timePlanned: selectedRow.timePlanned,
+        type: selectedRow.type,
+      };
+
+      setTasksList([
+        ...tasksList.slice(0, tasksList.indexOf(selectedRow)),
+        duplicatedRow,
+        ...tasksList.slice(tasksList.indexOf(selectedRow)),
+      ]);
+
+      console.log(selectedRow)
+    },
+    [tasksList]
+  );
 
   return (
     <div className='App'>
@@ -38,6 +70,7 @@ function App() {
         activeTasks={activeTasks}
         setActiveTasks={setActiveTasks}
         handleClick={handleRowClick}
+        handleDuplicate={handleDuplicate}
       />
       <Footer />
     </div>

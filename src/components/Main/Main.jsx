@@ -13,10 +13,11 @@ export default function Main({
   activeTasks,
   setActiveTasks,
   handleClick,
+  handleDuplicate,
 }) {
   return (
     <main className='main'>
-      <Toolbar />
+      <Toolbar selectedRow={selectedRow} handleDuplicate={handleDuplicate}/>
       <TaskTable
         doneTasks={doneTasks}
         todaysTasks={todaysTasks}
