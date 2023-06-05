@@ -21,7 +21,7 @@ main {
 }
 
 
-
-.row-template {
-  display: flex;
+.height-0{
+  height: 0;
+  overflow: hidden;
 }
